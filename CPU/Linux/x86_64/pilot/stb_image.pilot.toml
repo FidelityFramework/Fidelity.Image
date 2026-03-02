@@ -1,0 +1,40 @@
+[library]
+name = "stb_image"
+headers = ["/usr/include/stb/stb_image.h"]
+include_paths = ["/usr/include/stb", "/usr/include"]
+macro_prefixes = ["STBI_"]
+
+[output]
+mode = "fidelity"
+directory = "../Bindings/StbImage"
+
+[error_conventions]
+default = "null_with_reason"
+reason_function = "stbi_failure_reason"
+
+[options]
+opaque_handles = false
+
+[[namespace]]
+name = "Fidelity.Image.Stb"
+description = "stb_image decoding and query functions"
+library = "stb_image"
+functions = [
+    "stbi_load", "stbi_load_from_memory",
+    "stbi_load_16", "stbi_load_16_from_memory",
+    "stbi_loadf", "stbi_loadf_from_memory",
+    "stbi_load_gif_from_memory",
+    "stbi_info", "stbi_info_from_memory",
+    "stbi_is_hdr", "stbi_is_hdr_from_memory",
+    "stbi_is_16_bit", "stbi_is_16_bit_from_memory",
+    "stbi_image_free",
+    "stbi_failure_reason",
+    "stbi_set_flip_vertically_on_load",
+    "stbi_set_flip_vertically_on_load_thread",
+    "stbi_set_unpremultiply_on_load",
+    "stbi_set_unpremultiply_on_load_thread",
+    "stbi_convert_iphone_png_to_rgb",
+    "stbi_convert_iphone_png_to_rgb_thread",
+    "stbi_hdr_to_ldr_gamma", "stbi_hdr_to_ldr_scale",
+    "stbi_ldr_to_hdr_gamma", "stbi_ldr_to_hdr_scale"
+]
