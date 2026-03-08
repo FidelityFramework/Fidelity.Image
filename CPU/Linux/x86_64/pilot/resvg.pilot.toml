@@ -1,0 +1,58 @@
+[library]
+name = "resvg"
+headers = ["/usr/include/resvg.h"]
+include_paths = ["/usr/include"]
+macro_prefixes = ["RESVG_"]
+
+[output]
+mode = "fidelity"
+directory = "../Bindings/Resvg"
+
+[error_conventions]
+default = "enum_error_code"
+error_type = "resvg_error"
+success_value = "RESVG_OK"
+
+[options]
+opaque_handles = true
+
+[[namespace]]
+name = "Fidelity.Image.Resvg"
+description = "SVG parsing, rendering, and node queries"
+library = "resvg"
+functions = [
+    "resvg_transform_identity",
+    "resvg_init_log",
+    "resvg_options_create",
+    "resvg_options_set_resources_dir",
+    "resvg_options_set_dpi",
+    "resvg_options_set_stylesheet",
+    "resvg_options_set_font_family",
+    "resvg_options_set_font_size",
+    "resvg_options_set_serif_family",
+    "resvg_options_set_sans_serif_family",
+    "resvg_options_set_cursive_family",
+    "resvg_options_set_fantasy_family",
+    "resvg_options_set_monospace_family",
+    "resvg_options_set_languages",
+    "resvg_options_set_shape_rendering_mode",
+    "resvg_options_set_text_rendering_mode",
+    "resvg_options_set_image_rendering_mode",
+    "resvg_options_load_font_data",
+    "resvg_options_load_font_file",
+    "resvg_options_load_system_fonts",
+    "resvg_options_destroy",
+    "resvg_parse_tree_from_file",
+    "resvg_parse_tree_from_data",
+    "resvg_is_image_empty",
+    "resvg_get_image_size",
+    "resvg_get_object_bbox",
+    "resvg_get_image_bbox",
+    "resvg_node_exists",
+    "resvg_get_node_transform",
+    "resvg_get_node_bbox",
+    "resvg_get_node_stroke_bbox",
+    "resvg_tree_destroy",
+    "resvg_render",
+    "resvg_render_node"
+]

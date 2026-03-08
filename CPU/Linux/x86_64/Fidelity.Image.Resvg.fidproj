@@ -1,0 +1,26 @@
+[package]
+name = "Fidelity.Image.Resvg"
+version = "0.1.0"
+description = "Generated bindings for resvg."
+
+[compilation]
+target = "cpu"
+
+[build]
+output_kind = "library"
+sources = [
+    "Bindings/Resvg/Types.clef",
+    "Bindings/Resvg/ResvgError.clef",
+    "Bindings/Resvg/Resvg/Types.clef",
+    "Bindings/Resvg/Resvg/Resvg.clef",
+    "Bindings/Resvg/Resvg/ResvgApi.clef",
+]
+
+[platform]
+runtime_model = "libc"
+os = "linux"
+arch = "x86_64"
+word_size = 64
+
+[dependencies]
+Fidelity.Platform = { path = "../../../../Fidelity.Platform/CPU/Linux/x86_64/Fidelity.Platform.fidproj" }
